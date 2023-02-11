@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #050210;
+        }
+
+        #div-1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid transparent;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: absolute;
+            top: 200px;
+            left: 600px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            z-index: 0;
+            animation-name: animation-1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        #div-1::before {
+            content: '';
+            width: 325px;
+            height: 325px;
+            border: 1px solid transparent;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: absolute;
+            top: -12.5px;
+            left: -12.5px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            filter: blur(40px);
+            animation-name: animation-1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        #div-2 {
+            width: 260px;
+            height: 260px;
+            border: 1px solid transparent;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: absolute;
+            top: 220px;
+            left: 620px;
+            background-color: #050210;
+            filter: brightness(125%);
+            z-index: 1;
+            
+        }
+
+        #div-2::before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border: 1px solid transparent;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: absolute;
+            top: 125px;
+            left: 125px;
+            background-color: #050210;
+            filter: brightness(150%);
+            z-index: 2;
+            animation-name: animation-2;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes animation-1 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes animation-2 {
+            0% {
+                width: 0px;
+                height: 0px;
+            }
+            40% {
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                top: 30px;
+                left: 30px;
+            }
+
+            100% {
+                width: 255px;
+                height: 255px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div-1"></div>
+    <div id="div-2"></div>
+</body>
+</html>
